@@ -12,10 +12,21 @@ document.addEventListener('DOMContentLoaded', function () {
     // Sidebar toggle
     const sidebarToggle = document.querySelector('.sidebar-toggle');
     const sidebar = document.querySelector('.sidebar');
+    const mainLayout = document.querySelector('.main-layout');
 
-    if (sidebarToggle && sidebar) {
+    if (sidebarToggle && sidebar && mainLayout) {
         sidebarToggle.addEventListener('click', function () {
-            sidebar.classList.toggle('active');
+            // Toggle classes for sidebar and main layout
+            sidebar.classList.toggle('collapsed');
+            mainLayout.classList.toggle('sidebar-collapsed');
+
+            // Change button text and icon
+            const isCollapsed = sidebar.classList.contains('collapsed');
+            if (isCollapsed) {
+                sidebarToggle.innerHTML = `<i class="bi bi-list"></i> Hiện danh mục`;
+            } else {
+                sidebarToggle.innerHTML = `<i class="bi bi-x-lg"></i> Ẩn danh mục`;
+            }
         });
     }
 });

@@ -19,7 +19,6 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--light-bg);
-    padding-top: 80px; /* Provide space for the fixed header */
 }
 
 
@@ -81,13 +80,16 @@ body {
 .banner {
     width: 100%;
     position: relative;
-    /* The body's padding-top handles the space for the header */
+    margin-top: 80px; /* Space for fixed header */
+    margin-bottom: 2rem; /* Add space below the banner */
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
 }
 
 .banner img {
     width: 100%;
-    height: 500px;
-    object-fit: cover;
+    height: 550px; /* Increased height to show full logo with text */
+    object-fit: cover; /* Cover to fill width while showing most of image */
+    object-position: center 40%; /* Position to show more of bottom text */
     display: block; /* Prevents extra space below image */
 }
 
@@ -95,25 +97,30 @@ body {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     color: white;
-    padding: 8px 15px;
-    border-radius: 4px;
-    z-index: 1; /* Ensure it's above the banner image */
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    z-index: 2; /* Ensure it's above the banner image */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 
 /* Main layout */
 
 .main-layout {
-    margin-top: 2rem;
     display: grid;
     grid-template-columns: 250px 1fr;
     gap: 2rem;
     align-items: start;
-    position: relative; /* Add position context for z-index */
-    z-index: 2;       /* Ensure main content is above the banner */
-    background-color: var(--light-bg); /* Match body background to cover banner */
+    transition: grid-template-columns 0.4s ease;
+}
+
+.main-layout.sidebar-collapsed {
+    grid-template-columns: 0 1fr;
+    gap: 0;
 }
 
 
@@ -122,13 +129,20 @@ body {
 .sidebar {
     position: sticky;
     top: 100px;
-    /* header height + spacing */
     max-height: calc(100vh - 120px);
     overflow-y: auto;
     background: white;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    overflow-x: hidden; /* Hide content when collapsing */
+}
+
+.sidebar.collapsed {
+    padding: 0;
+    transform: translateX(-100%);
+    opacity: 0;
 }
 
 .sidebar h3 {
@@ -477,9 +491,13 @@ main.container article {
 /* --- Responsive Styles --- */
 
 /* Mobile Menu Toggles */
-.mobile-menu-toggle,
-.sidebar-toggle {
+.mobile-menu-toggle {
     display: none; /* Hidden by default on larger screens */
+    cursor: pointer;
+}
+
+.sidebar-toggle {
+    display: block; /* Always show sidebar toggle */
     cursor: pointer;
 }
 
@@ -496,26 +514,7 @@ main.container article {
         grid-template-columns: 1fr; /* Stack sidebar and content */
     }
 
-    .sidebar {
-        position: static; /* Remove sticky positioning */
-        max-height: none;
-        margin-bottom: 2rem;
-        display: none; /* Hide sidebar by default */
-    }
 
-    .sidebar.active {
-        display: block; /* Show sidebar when toggled */
-        background: white;
-        padding: 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin-top: 1rem; /* Add some space below the button */
-        margin-bottom: 2rem;
-    }
-
-    .sidebar-toggle {
-        display: block; /* Show the sidebar toggle button */
-    }
 
     .main-nav {
         display: none; /* Hide navigation */
@@ -553,7 +552,6 @@ main.container article {
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
     body {
-        padding-top: 70px; /* Adjust for a slightly smaller header */
         word-wrap: break-word; /* Prevent text overflow */
     }
 
@@ -570,8 +568,20 @@ main.container article {
         top: 70px;
     }
 
+    .banner {
+        margin-top: 70px; /* Adjust for smaller mobile header */
+    }
+
     .banner img {
-        height: 300px; /* Reduce banner height on mobile */
+        height: 350px; /* Increased height for mobile to show text */
+        object-position: center 40%; /* Match desktop positioning */
+    }
+
+    .banner-overlay {
+        bottom: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 0.9rem;
     }
 
     .content {
