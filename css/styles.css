@@ -471,14 +471,18 @@ main.container article {
 
 /* --- Responsive Styles --- */
 
-/* Mobile Menu Toggle (Hamburger Icon) */
-.mobile-menu-toggle {
+/* Mobile Menu Toggles */
+.mobile-menu-toggle,
+.sidebar-toggle {
     display: none; /* Hidden by default on larger screens */
+    cursor: pointer;
+}
+
+.mobile-menu-toggle {
     font-size: 1.8rem;
     color: var(--primary-color);
     background: transparent;
     border: none;
-    cursor: pointer;
 }
 
 /* Tablet and smaller devices */
@@ -491,6 +495,15 @@ main.container article {
         position: static; /* Remove sticky positioning */
         max-height: none;
         margin-bottom: 2rem;
+        display: none; /* Hide sidebar by default */
+    }
+
+    .sidebar.active {
+        display: block; /* Show sidebar when toggled */
+    }
+
+    .sidebar-toggle {
+        display: block; /* Show the sidebar toggle button */
     }
 
     .main-nav {
