@@ -510,6 +510,7 @@ main.container article {
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         margin-top: 1rem; /* Add some space below the button */
+        margin-bottom: 2rem;
     }
 
     .sidebar-toggle {
