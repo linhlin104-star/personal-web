@@ -497,9 +497,6 @@ main.container article {
     }
 
     .sidebar {
-        position: static; /* Remove sticky positioning */
-        max-height: none;
-        margin-bottom: 2rem;
         display: none; /* Hide sidebar by default */
     }
 
@@ -509,7 +506,8 @@ main.container article {
         padding: 1.5rem;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin-top: 1rem; /* Add some space below the button */
+        margin-top: 1rem;
+        margin-bottom: 2rem;
     }
 
     .sidebar-toggle {
@@ -573,7 +571,7 @@ main.container article {
         height: 300px; /* Reduce banner height on mobile */
     }
 
-    .content, .sidebar {
+    .content {
         padding: 1.5rem 1rem;
     }
 
@@ -621,4 +619,5 @@ main.container article {
     .social-links {
         justify-content: center;
     }
+}
 }
