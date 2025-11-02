@@ -1,12 +1,5 @@
 /* Global styles */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 :root {
     --primary-color: #8B4513;
     --secondary-color: #D2691E;
@@ -723,13 +716,12 @@ section h2:after {
 
 
 /* News article styles */
-
 main.container article {
     margin-bottom: 2rem;
     padding: 1.5rem;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .article-content {

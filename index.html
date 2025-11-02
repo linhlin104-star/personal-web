@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Khỉ Vàng - Thực phẩm chay</title>
     <!-- favicon (icon trên thanh tiêu đề) -->
-    <link rel="icon" href="KhiVang-trong suot 1000x.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
     <!-- Bootstrap (dùng trên trang bootstrap.html nhưng để chung ở đây) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- CSS chính -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <!-- HEADER chung: chứa logo, menu, và banner -->
     <header class="site-header">
         <div class="container header-top">
             <a href="index.html" class="logo">
-                <img src="KhiVang-trong suot 1000x.png" alt="Logo Khỉ Vàng" width="120">
+                <img src="assets/images/logo.png" alt="Logo Khỉ Vàng" width="120">
             </a>
             <nav class="main-nav">
                 <ul>
@@ -30,16 +31,13 @@
                 </ul>
             </nav>
         </div>
-
-
-        <!-- Banner chính (yêu cầu: có mã sinh viên trên banner) -->
-        <div class="banner">
-            <!-- Tạo ảnh banner trong media/images/banner.jpg (kích thước gợi ý 1920x500) -->
-            <img src="media/images/banner.jpg" alt="Banner Khỉ Vàng">
-            <div class="banner-overlay">Mã SV: 524107268</div>
-        </div>
     </header>
 
+    <!-- Banner chính -->
+    <div class="banner">
+        <img src="assets/images/banner.jpg" alt="Banner Khỉ Vàng">
+        <div class="banner-overlay">Mã SV: 524107268</div>
+    </div>
 
     <!-- MAIN (Layout: sidebar + nội dung) -->
     <main class="container main-layout">
@@ -62,28 +60,250 @@
 
         <section class="content">
             <h1>Thực phẩm chay Khỉ Vàng</h1>
-            <p>Nơi ẩm thực chay thuần khiết đánh thức mọi giác quan. Ăn chay là tận hưởng, là sẻ chia yêu thương và sống khỏe mạnh.</p>
+            <p class="lead">Nơi ẩm thực chay thuần khiết đánh thức mọi giác quan. Ăn chay là tận hưởng, là sẻ chia yêu thương và sống khỏe mạnh.</p>
 
+            <section class="featured-dishes mb-5">
+                <h2 class="text-center mb-4">Món Chay Đặc Trưng</h2>
+                <div class="product-preview-grid">
+                    <article class="card">
+                        <img src="assets/images/ruoc.webp" alt="Ruốc nấm">
+                        <div class="card-body">
+                            <h4>Ruốc Nấm</h4>
+                            <p class="card-text">Ruốc nấm thơm ngon, giàu protein từ nấm hương tự nhiên.</p>
+                            <p class="price">80.000đ</p>
+                            <span class="badge bg-success">Bestseller</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/images/nem-bo.jpg" alt="Nem Bơ">
+                        <div class="card-body">
+                            <h4>Nem Bơ</h4>
+                            <p class="card-text">Nem cuốn với bơ tươi và rau củ, kèm sốt đặc biệt.</p>
+                            <p class="price">80.000đ</p>
+                            <span class="badge bg-info">Mới</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/images/nem-tam-giac.jpg" alt="Nem Tam Giác">
+                        <div class="card-body">
+                            <h4>Nem Tam Giác</h4>
+                            <p class="card-text">Nem cuốn với bơ tươi và rau củ, kèm sốt đặc biệt.</p>
+                            <p class="price">80.000đ</p>
+                            <span class="badge bg-info">Mới</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/images/gio.jpg" alt="Giò thực dưỡng">
+                        <div class="card-body">
+                            <h4>Giò Thực Dưỡng</h4>
+                            <p class="card-text">Giò chay làm từ đậu và nấm, thơm ngon bổ dưỡng.</p>
+                            <p class="price">80.000đ</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
 
-            <div class="product-preview-grid">
-                <!-- ví dụ lưới tự tạo (responsive) -->
-                <article class="card">
-                    <img src="media/images/product1.jpg" alt="Sản phẩm 1">
-                    <h4>Ruốc nấm</h4>
-                    <p>Giá: 80.000đ</p>
-                </article>
-                <article class="card">
-                    <img src="media/images/product2.jpg" alt="Sản phẩm 2">
-                    <h4>Nem bơ</h4>
-                    <p>Giá: 80.000đ</p>
-                </article>
-                <article class="card">
-                    <img src="media/images/product1.jpg" alt="Sản phẩm 1">
-                    <h4>Giò thực dưỡng</h4>
-                    <p>Giá: 80.000đ</p>
-                </article>
-            </div>
+            <section class="new-dishes mb-5">
+                <h2 class="text-center mb-4">Món Mới</h2>
+                <div class="product-preview-grid">
+                    <article class="card">
+                        <img src="assets/images/mit-kho.jpg" alt="mít non kho">
+                        <div class="card-body">
+                            <h4>mít non kho</h4>
+                            <p class="card-text">Mít non kho với gia vị đặc trưng, thơm ngon hấp dẫn.</p>
+                            <p class="price">95.000đ</p>
+                            <span class="badge bg-danger">Hot</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/images/phu-truc.jpg" alt="Phù trúc cuộn Nấm">
+                        <div class="card-body">
+                            <h4>Phù Trúc Cuộn Quảng Đông</h4>
+                            <p class="card-text">Món ăn truyền thống với phù trúc và rau củ tươi.</p>
+                            <p class="price">65.000đ</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/images/goi.jpg" alt="Gỏi cuốn chay">
+                        <div class="card-body">
+                            <h4>Gỏi Cuốn Chay</h4>
+                            <p class="card-text">Gỏi cuốn rau củ tươi với đậu hũ chiên.</p>
+                            <p class="price">70.000đ</p>
+                            <span class="badge bg-primary">Healthy</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="seasonal-menu mb-5">
+                <h2 class="text-center mb-4">Món Theo Mùa</h2>
+                <div class="product-preview-grid">
+                    <article class="card">
+                        <img src="assets/images/canh-mang.jpg" alt="canh măng">
+                        <div class="card-body">
+                            <h4>Canh Măng</h4>
+                            <p class="card-text">Canh măng tươi ngon với nấm và đậu hũ.</p>
+                            <p class="price">55.000đ</p>
+                            <span class="badge bg-warning">Mùa mới</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/images/salad.jpg" alt="Salad mùa xuân">
+                        <div class="card-body">
+                            <h4>Salad Mùa Xuân</h4>
+                            <p class="card-text">Salad tươi mát với rau củ theo mùa và sốt đặc biệt.</p>
+                            <p class="price">45.000đ</p>
+                            <span class="badge bg-success">Organic</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/images/xoi.jpg" alt="xôi ngũ sắc">
+                        <div class="card-body">
+                            <h4>Xôi Ngũ Sắc</h4>
+                            <p class="card-text">Xôi ngũ sắc hấp dẫn với nhiều loại đậu và lá tự nhiên.</p>
+                            <p class="price">75.000đ</p>
+                            <span class="badge bg-info">Đặc biệt</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="combo-sets mb-5">
+                <h2 class="text-center mb-4">Combo Tiết Kiệm</h2>
+                <div class="product-preview-grid">
+                    <article class="card">
+                        <img src="assets/images/lau-thai.jpg" alt="Combo gia đình">
+                        <div class="card-body">
+                            <h4>Combo Gia Đình</h4>
+                            <p class="card-text">lẩu thái</p>
+                            <p class="price"><del>315.000đ</del> 280.000đ</p>
+                            <span class="badge bg-danger">Tiết kiệm 35k</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/images/lau.jpg" alt="Combo đãi tiệc">
+                        <div class="card-body">
+                            <h4>Combo Đãi Tiệc</h4>
+                            <p class="card-text">lẩu thái</p>
+                            <p class="price"><del>500.000đ</del> 399.000đ</p>
+                            <span class="badge bg-warning">Best Value</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/images/co.jpg" alt="Combo">
+                        <div class="card-body">
+                            <h4>Cỗ chay</h4>
+                            <p class="card-text">Món ăn truyền thống trong ngày lễ</p>
+                            <p class="price"><del>800.000đ</del> 750.000đ</p>
+                            <span class="badge bg-success">Healthy Choice</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="popular-recipes mb-5">
+                <h2 class="text-center mb-4">Công Thức Nổi Bật</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="recipe-card">
+                            <div class="recipe-image">
+                                <img src="assets/images/mi-van-than.jpg" alt="mì vằn thắn chay">
+                            </div>
+                            <div class="recipe-content">
+                                <h4>mì vằn thắn</h4>
+                                <p>sợi mì dai ngon, nước dùng đậm đà</p>
+                                <div class="recipe-meta">
+                                    <span><i class="bi bi-clock"></i> 30 phút</span>
+                                    <span><i class="bi bi-star-fill"></i> 4.8/5</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-success">Xem công thức</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="recipe-card">
+                            <div class="recipe-image">
+                                <img src="assets/images/bun-chay.jpg" alt="bún mọc chay">
+                            </div>
+                            <div class="recipe-content">
+                                <h4>Bún Mọc Chay</h4>
+                                <p>Nước dùng thanh ngọt từ rau củ với các loại nấm và đậu hũ</p>
+                                <div class="recipe-meta">
+                                    <span><i class="bi bi-clock"></i> 45 phút</span>
+                                    <span><i class="bi bi-star-fill"></i> 4.9/5</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-success">Xem công thức</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="customer-reviews mb-5">
+                <h2 class="text-center mb-4">Khách Hàng Nói Gì?</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"Món ăn rất ngon và healthy. Đặc biệt là ruốc nấm, ăn không biết ngán!"</p>
+                            <div class="reviewer">- Chị Lan Anh</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"Đồ ăn chay mà ngon không kém gì đồ mặn. Sẽ ủng hộ dài dài."</p>
+                            <div class="reviewer">- Anh Quang</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">"Combo gia đình rất đáng đồng tiền. Giao hàng nhanh và đóng gói cẩn thận."</p>
+                            <div class="reviewer">- Chị Thu Hà</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="promo-section text-center p-4 mb-4">
+                <h3>Đặt Hàng Online - Giảm 10%</h3>
+                <p>Áp dụng cho đơn hàng từ 200.000đ</p>
+                <button class="btn btn-success btn-lg">Đặt Hàng Ngay</button>
+            </section>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Về Khỉ Vàng</h5>
+                    <p>Chuyên cung cấp thực phẩm chay dinh dưỡng, an toàn và chất lượng cao.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Liên hệ</h5>
+                    <p>Địa chỉ: HH4A Đường Linh Đường, Quận Hoàng Mai, Hà Nội<br> Email: info@khivang.com<br> Điện thoại: 098 8596383</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Theo dõi chúng tôi</h5>
+                    <div class="social-links">
+                        <a href="#" class="me-2">Facebook</a>
+                        <a href="#" class="me-2">Instagram</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>&copy; 2024 Khỉ Vàng. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
 
 </html>
