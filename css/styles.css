@@ -79,15 +79,16 @@ body {
 /* Banner styles */
 
 .banner {
-    padding-top: 80px; /* Match header height to prevent content from hiding behind it */
     width: 100%;
     position: relative;
+    /* The body's padding-top handles the space for the header */
 }
 
 .banner img {
     width: 100%;
     height: 500px;
     object-fit: cover;
+    display: block; /* Prevents extra space below image */
 }
 
 .banner-overlay {
@@ -98,6 +99,7 @@ body {
     color: white;
     padding: 8px 15px;
     border-radius: 4px;
+    z-index: 1; /* Ensure it's above the banner image */
 }
 
 
@@ -109,6 +111,9 @@ body {
     grid-template-columns: 250px 1fr;
     gap: 2rem;
     align-items: start;
+    position: relative; /* Add position context for z-index */
+    z-index: 2;       /* Ensure main content is above the banner */
+    background-color: var(--light-bg); /* Match body background to cover banner */
 }
 
 
@@ -500,6 +505,10 @@ main.container article {
 
     .sidebar.active {
         display: block; /* Show sidebar when toggled */
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .sidebar-toggle {
