@@ -218,124 +218,7 @@ body {
 }
 
 
-/* Reset & cơ bản */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", Roboto, Arial, sans-serif
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 16px
-}
-
-
-/* Header */
-
-.header-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 0
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 18px
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: #123
-}
-
-.logo img {
-    display: block
-}
-
-.banner {
-    position: relative;
-    overflow: hidden
-}
-
-.banner img {
-    width: 100%;
-    height: auto;
-    display: block
-}
-
-.banner-overlay {
-    position: absolute;
-    right: 16px;
-    bottom: 12px;
-    background: rgba(0, 0, 0, 0.55);
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-weight: 600
-}
-
-
-/* Layout chính */
-
-.main-layout {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 24px;
-    padding: 24px 0
-}
-
-.sidebar {
-    background: #fafafa;
-    padding: 12px;
-    border-radius: 8px
-}
-
-.content h1 {
-    margin-bottom: 12px
-}
-
-
-/* Lưới sản phẩm tự tạo */
-
-.product-preview-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-    margin-top: 16px
-}
-
-.card {
-    border: 1px solid #eee;
-    padding: 12px;
-    border-radius: 8px;
-    background: #fff
-}
-
-.card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-}
-
-
-/* Responsive: thu gọn layout */
-
-@media (max-width:900px) {
-    .main-layout {
-        grid-template-columns: 1fr
-    }
-    .header-top {
-        flex-direction: column;
-        gap: 10px
-    }
-}
 
 
 /* Footer */
@@ -762,4 +645,100 @@ main.container article {
     color: var(--primary-color);
     text-decoration: none;
     display: inline-block;
+
+
+/* --- Responsive Styles --- */
+
+/* Mobile Menu Toggle (Hamburger Icon) */
+.mobile-menu-toggle {
+    display: none; /* Hidden by default on larger screens */
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Tablet and smaller devices */
+@media (max-width: 992px) {
+    .main-layout {
+        grid-template-columns: 1fr; /* Stack sidebar and content */
+    }
+
+    .sidebar {
+        position: static; /* Remove sticky positioning */
+        max-height: none;
+        margin-bottom: 2rem;
+    }
+
+    .main-nav {
+        display: none; /* Hide navigation */
+        position: absolute;
+        top: 80px; /* Position below header */
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    .main-nav.active {
+        display: block; /* Show when toggled */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .main-nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-menu-toggle {
+        display: block; /* Show the hamburger icon */
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Adjust for a slightly smaller header */
+    }
+
+    .header-top {
+        height: 70px;
+    }
+
+    .main-nav {
+        top: 70px;
+    }
+
+    .banner img {
+        height: 300px; /* Reduce banner height on mobile */
+    }
+
+    .content, .sidebar {
+        padding: 1rem;
+    }
+
+    .article-content {
+        flex-direction: column;
+    }
+
+    .article-content img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+
+    .article-content .text-content {
+        text-align: left;
+    }
+}
+
 }
